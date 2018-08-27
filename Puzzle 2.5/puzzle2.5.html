@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Title</title>
+    <style>
+        .first
+        {
+            float:left;
+            width:30%;
+        }
+        .second
+        {
+            float:left;
+            width: 30%;
+        }
+        .result
+        {
+            float:left;
+            width: 30%;
+        }
+    </style>
+</head>
+<body>
+  <div class="first">First Form: <br>
+  <input type="number" id="first">
+  <input type="button" onclick="addfirst()" value="Submit">
+   <p id="disp1" ></p>
+   </div>
+  <div class="second">Second Form:<br>
+  <input type="number" id="second">
+  <input type="button" onclick="addsecond()" value="Submit">
+  <p id="disp2"></p>
+  </div>
+  <div class="result">
+  <p id="res"></p>  
+  </div>
+  <script>
+    var first=[];
+    var second=[];
+    var x=0,y=0;
+    function addfirst()
+    {
+        var a=document.getElementById("first").value;
+        first[x]=a;
+        x++;
+        document.getElementById("disp1").innerHTML+=a+'<br/>';
+    }
+     function addsecond()
+    {
+        var a=document.getElementById("second").value;
+        second[y]=a;
+        y++; document.getElementById("disp2").innerHTML+=a+'<br/>';
+        res();
+    }
+    function res()
+    {
+          var add;
+          for(var i=0;i<first.length;i++)
+          {
+            add=Number(first[i])+Number(second[y-1]);
+            if(add>=100)
+            {
+               var str= first[i]+'+'+second[y-1]+'='+add;
+               document.getElementById("res").innerHTML+=str+'<br/>';
+            }
+          }
+    }
+  </script>
+</body>
