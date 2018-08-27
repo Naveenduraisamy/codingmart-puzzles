@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Title</title>
+</head>
+<body>
+<pre>
+    <center>
+        A:<input type="number" id="num1" onblur="dispnum()" value="">
+
+        B:<input type="number" id="num2" onblur="dispnum()">
+
+        C:<input type="number" id="num3" onblur="dispnum()">
+
+        D:<input type="number" id="num4" onblur="dispnum()">
+    <hr style="border-style:dotted;color:black;border-width: thin;">
+
+        Total:<input type="number" id="total" onclick="dispnum()"></center>
+    <script>
+         function dispnum() {
+             var no1=Number(document.getElementById("num1").value);
+             var no2=Number(document.getElementById("num2").value);
+             var no3=Number(document.getElementById("num3").value);
+             var no4=Number(document.getElementById("num4").value);
+             var tot=Number(document.getElementById("total").value);
+             if(no1=="" && no2!="" && no3!="" && no4!="" && tot!="")
+             {
+                var a=tot-(no2+no3+no4);
+                document.getElementById("num1").value=a;
+             }
+             if(no1!="" && no2=="" && no3!="" && no4!="" && tot!="")
+             {
+               var a=tot-(no1+no3+no4);
+               document.getElementById("num2").value=a;
+             }
+             if(no1!="" && no2!="" && no3=="" && no4!="" && tot!="")
+             {
+               var a=tot-(no1+no2+no4);
+               document.getElementById("num3").value=a;
+             }
+             if(no1!="" && no2!="" && no3!="" && no4=="" && tot!="")
+             {
+                var a=tot-(no1+no2+no3);
+               document.getElementById("num4").value=a;
+             }
+             if(no1!="" && no2!="" && no3!="" && no4!="" && tot=="")
+             {
+                var a=no1+no2+no3+no4;
+               document.getElementById("total").value=a;
+             }
+         }
+    </script>
+</pre>
+</body>
+</html>
