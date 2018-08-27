@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Title</title>
+    <style>
+      #tank
+        {
+          position:relative;
+          margin-top:100px;
+          margin-left:150px;
+          width:250px;
+          height:300px;
+          border:1px solid black;
+          border-width: thick;
+          border-top-left-radius: 20px;
+          border-top-right-radius: 20px;
+        }
+        #insidetank1
+        {
+          position: absolute;
+          margin-top: -4px;
+          margin-left: -4px;
+          width:252px;
+          height:302px;
+          border:1px solid black;
+          border-width: thick;
+          border-top-left-radius: 20px;
+          border-top-right-radius: 20px;
+          background-color: aqua;
+        }
+          #insidetank2
+        {
+          position: absolute;
+          margin-top: 0px;
+          margin-left:-10x;
+          width:252px;
+          height:0px;
+          border:.1px;
+          border-width:thick;
+          border-top-left-radius: 20px;
+          border-top-right-radius: 20px;
+          background-color:white;
+          transition-property: height;
+         transition-duration: 12s;
+        }
+      #but
+      {
+        float: left;
+        background-color:red;
+        margin-left: 480px;
+        margin-top:235px;
+        width: 60px;
+        height: 20px;  
+      }
+      .pipe
+      {
+           float: left;
+           margin-top: -30px;
+           margin-left:405px;
+           width: 80px;
+           height:.1px;
+           border:10px solid black;
+      }
+      .pipe1
+      {
+          float: left;
+          margin-left: 500px;
+          margin-top: -55px;
+          width: 1px;
+          height: 40px;
+          border:10px solid black;
+      }
+        #flow
+        {
+            display:none;
+            position: relative;
+            margin-left: 507px;
+            margin-top: 5px;
+            width: .1px;
+            height: 325px;
+            border: 5px solid aqua;
+        }
+        #bucket
+        {
+          position: absolute;
+          margin-top: 40px;
+          margin-left: 400px;
+          width:252px;
+          height:300px;
+          border:1px solid black;
+          border-width: thick;
+          border-top: none;
+          background-color: aqua; 
+        }
+        #bucket1
+        {
+          position: absolute;
+          margin-top: 40px;
+          margin-left: 400px;
+          width:252px;
+          height:300px;
+          border:1px solid black;
+          border-width: thick;
+          border-top: none;
+          
+          border-bottom: none;
+          background-color: white; 
+          transition-property: height;
+          transition-duration: 12s;
+        }
+    </style>
+    <script>
+     function changecolor()
+     {
+     if(document.getElementById("but").style.backgroundColor=="chartreuse")
+     {
+         document.getElementById("but").style.backgroundColor="red";
+         document.getElementById("insidetank2").setAttribute("style","transition-delay:100s;");
+         document.getElementById("bucket1").setAttribute("style","transition-delay:100s;");
+         document.getElementById("flow").setAttribute("style","display:none;");
+     }
+      else
+      {  
+       document.getElementById("but").style.backgroundColor="chartreuse"; 
+       document.getElementById("insidetank2").setAttribute("style","height:304px;");
+       document.getElementById("flow").setAttribute("style","display:block;");
+       document.getElementById("bucket1").setAttribute("style","height:0px;");
+       setTimeout(function(){
+           document.getElementById("flow").setAttribute("style","display:none;");
+       },10000);
+      }
+     }
+    </script>
+</head>
+<body>
+   
+  <button id="but" onclick="changecolor()" ></button>
+  <div id="tank">
+    <div id="insidetank1"></div>
+    <div id="insidetank2"></div>
+   </div>
+  <div class="pipe"></div>
+  <div class="pipe1"></div>
+  <div id="bucket"></div>
+  <div id="bucket1"></div>
+  <div id="flow"></div>
+  </div>
+</body>
