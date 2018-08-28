@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Puzzle1</title>
+    <style>
+        .backimg
+        {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            overflow:hidden;
+            margin-left:10%;
+            margin-top:5%;
+            border: 1px solid black;
+            background-image:url("street.png");
+            background-size:cover ;
+        }
+        .img1
+        {
+            position: absolute;
+            bottom:0px;
+            width: 100px;
+            height: 100px;
+        }
+        .flat
+        {
+            position: absolute;
+            background-image: url("building.jpg");
+            background-size: 20px 20px;
+            background-repeat:repeat;
+            bottom:0px;
+            right: -300px;
+            height: 200px;
+            width: 100px;
+            border:1px solid black;
+        }
+    </style>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <script>
+     $(document).ready(function()
+     {
+     setInterval(function(){
+         newflat=$('<span/>',{
+             class:"flat"
+         });
+         newflat.appendTo('.backimg');
+         var a=Math.random();
+         var height=(30*a)+20;
+         var width=(10*a)+20;
+         newflat.css({"height":height+"%","width":width+"%"});
+         var left=0-width-2;
+         newflat.animate({"left":left+"%"},3500,function(){
+             $(".img1").css("bottom","0px");
+             clearInterval(itr);
+         });
+         var itr=setInterval(function(){
+             $(".img1").css("bottom",height+"%");
+         },2200);
+     },2500);
+    });
+    </script>
+</head>
+<body>
+<div class="backimg">
+<img class="img1" src="person.gif" alt="image"></div>
+</div>
+</body>
+</html>
