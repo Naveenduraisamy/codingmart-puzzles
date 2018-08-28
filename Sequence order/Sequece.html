@@ -1,0 +1,251 @@
+<html>
+<head>
+    <title></title>
+    <style>
+        table{
+            background-color:brown;
+            width:500px;
+            height:500px;
+            border:1px; 
+        }
+        tr{
+          border:1px;
+          width: 20px;
+          height: :1px;
+        }
+        td{
+            border-radius:20px;
+            background-color:aqua;
+            width:10px;
+            height:10px;
+            padding-left:80px;
+        }
+    </style>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+         var a=0,count=0;
+         $("#one").click(function(){
+             a=$("#one").text();
+             if($("#two").text()=="")
+             {
+                 $("#one").text("");
+                 $("#two").text(a);
+                 count++;
+             }
+             if($("#four").text()=="")
+             {
+                 $("#one").text("");
+                 $("#four").text(a);
+                 count++;
+             }
+             $("#mov").text(count);
+         });
+         $("#two").click(function(){
+             a=$("#two").text();
+             if($("#three").text()=="")
+             {
+                 $("#two").text("");
+                 $("#three").text(a);
+                 count++;
+             }
+             if($("#one").text()=="")
+             {
+                 $("#two").text("");
+                 $("#one").text(a);
+                 count++;
+             }
+             if($("#five").text()=="")
+             {
+                 $("#two").text("");
+                 $("#five").text(a);
+                 count++;
+             }
+             $("#mov").text(count);
+         });
+         $("#three").click(function(){
+             a=$("#three").text();
+             if($("#two").text()=="")
+             {
+                 $("#three").text("");
+                 $("#two").text(a);
+                 count++;
+             }
+             if($("#six").text()=="")
+             {
+                 $("#three").text("");
+                 $("#six").text(a);
+                 count++;
+             }
+             $("#mov").text(count);
+         });
+        $("#four").click(function(){
+            a=$("#four").text();
+             if($("#one").text()=="")
+             {
+                 $("#four").text("");
+                 $("#one").text(a);
+                 count++;
+             }
+             if($("#five").text()=="")
+             {
+                 $("#four").text("");
+                 $("#five").text(a);
+                 count++;
+             }
+             if($("#seven").text()=="")
+             {
+                 $("#four").text("");
+                 $("#seven").text(a);
+                 count++;
+             }
+             $("#mov").text(count);
+         });
+        $("#five").click(function(){
+             a=$("#five").text();
+             if($("#two").text()=="")
+             {
+                 $("#five").text("");
+                 $("#two").text(a);
+                 count++;
+             }
+             if($("#four").text()=="")
+             {
+                 $("#five").text("");
+                 $("#four").text(a);
+                 count++;
+             }
+             if($("#six").text()=="")
+             {
+                 $("#five").text("");
+                 $("#six").text(a);
+                 count++;
+             }
+             if($("#eight").text()=="")
+             {
+                 $("#five").text("");
+                 $("#eight").text(a);
+                 count++;
+             }
+             $("#mov").text(count);
+         });
+        $("#six").click(function(){
+             a=$("#six").text();
+             if($("#three").text()=="")
+             {
+                 $("#six").text("");
+                 $("#three").text(a);
+                 count++;
+             }
+             if($("#five").text()=="")
+             {
+                 $("#six").text("");
+                 $("#five").text(a);
+                 count++;
+             }
+             if($("#nine").text()=="")
+             {
+                 $("#six").text("");
+                 $("#nine").text(a);
+                 count++;
+             }
+             $("#mov").text(count);
+         }); 
+        $("#seven").click(function(){
+             a=$("#seven").text();
+             if($("#four").text()=="")
+             {
+                 $("#seven").text("");
+                 $("#four").text(a);
+                 count++;
+             }
+             if($("#eight").text()=="")
+             {
+                 $("#seven").text("");
+                 $("#eight").text(a);
+                 count++;
+             }
+             $("#mov").text(count);
+         });
+        $("#eight").click(function(){
+             a=$("#eight").text();
+             if($("#seven").text()=="")
+             {
+                 $("#eight").text("");
+                 $("#seven").text(a);
+                 count++;
+             }
+             if($("#five").text()=="")
+             {
+                 $("#eight").text("");
+                 $("#five").text(a);
+                 count++;
+             }
+             if($("#nine").text()=="")
+             {
+                 $("#eight").text("");
+                 $("#nine").text(a);
+                 count++;
+             }
+             $("#mov").text(count);
+         });
+        $("#nine").click(function(){
+             a=$("#nine").text();
+             if($("#six").text()=="")
+             {
+                 $("#nine").text("");
+                 $("#six").text(a);
+                 count++;
+             }
+             if($("#eight").text()=="")
+             {
+                 $("#nine").text("");
+                 $("#eight").text(a);
+                 count++;
+             }
+             $("#mov").text(count);
+         });
+        $("#one,#two,#three,#four,#five,#six,#seven,#eight,#nine").click(function(){
+            console.log(count);
+           if($("#one").text()=="1" && $("#two").text()=="2" && $("#three").text()=="3" && $("#four").text()=="4" && $("#five").text()=="5" &&
+              $("#six").text()=="6" && $("#seven").text()=="7" && $("#eight").text()=="8")
+           {
+               document.write("<center><div style='margin-top:20%;border:1px solid black;background-color:tomato;width:300px;height:100px;border-radius:20px;'><h1 style='font-style:oblique;'>Wow! You Won the Match</h1></div></center>");
+           }
+        });
+        console.log(count);
+        });
+    </script>
+</head>
+<body>
+<center>
+    <p id="demo"></p>
+    <h1>Arrange the Numbers in Sequential Order</h1>
+    <h3>Your moves count:<p style="margin-left: 180px;margin-top: -21.5;" id="mov"></p></h3><br>
+    <table>
+        <tr>
+            <td id="one">1</td>
+            <td id="two">2</td>
+            <td id="three">3</td>
+        </tr>
+        <tr>
+            <td id="four"></td>
+            <td id="five">5</td>
+            <td id="six">6</td>
+        </tr>
+        <tr>
+            <td id="seven">7</td>
+            <td id="eight">8</td>
+            <td id="nine">4</td>
+        </tr>
+    </table>
+</center>
+</body>
+</html>
+
+
+
+
+
+
+
